@@ -1,0 +1,324 @@
+/* 
+=============
+Variables
+=============
+ */
+
+:root {
+    /* layout */
+    --primary-bgr: rgb(18, 23, 37);
+
+    /* typography */
+    --primary-header-color: rgb(84, 230, 175);
+    --secondary-header-color: rgb(255, 255, 255);
+    --par-color: rgb(194, 203, 229);
+    --input-color: rgb(90, 102, 138);
+    --primary-ff: 'Chivo', sans-serif;
+
+    /* button */
+    --primary-btn: rgb(84, 230, 175);
+    --primary-btn-hover: rgb(132, 243, 201);
+
+    /* input */
+    --input-color-bgr: rgb(44, 52, 75);
+}
+
+/*
+=============== 
+Global Styles
+===============
+*/
+
+
+*{
+    box-sizing: border-box; 
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    background-color: var(--primary-bgr);
+}
+
+h1 {
+    font-family: var(--primary-ff);
+    font-size: 52px;
+    line-height: 62px;
+    text-transform: uppercase;
+}
+
+p {
+    font-family: var(--primary-ff);
+    font-size: 18px;
+    line-height: 28px;
+}
+
+button {
+    height: 46px;
+    width: 162px;
+    color: var(--input-color);
+    background-color: var(--primary-btn);
+    border: none;
+    border-radius: 10px;
+}
+
+button:hover {
+    background-color: var(--primary-btn-hover);
+}
+
+
+/*
+=============== 
+Header Styles
+===============
+*/
+
+header {
+    width: 100%;
+    height: 120px;
+    z-index: 1;
+}
+
+header ul {
+    margin-top: 56px;
+    margin-left: 135px;
+}
+
+li {
+    list-style: none;
+}
+
+@media only screen and (max-width: 768px) {
+    header {
+        width: 100%;
+    }
+    header ul {
+        margin-top: 50px;
+        margin-left: 39px;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    header {
+        width: 100%; 
+        display: flex;   
+        justify-content: center;
+    }   
+}
+
+/*
+=============== 
+Main Styles
+===============
+*/
+
+.main {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    margin-bottom: 300px;
+}
+
+.main-holder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 509px;
+    width: 723px;
+    background-color: var(--primary-bgr);
+    position: relative;
+    top: 100px;
+    left: 165px;
+    z-index: 2;
+}
+
+.main-img-desktop {
+    z-index: 1;
+    position: absolute;
+    right: 0;
+}
+
+.main-img-tablet {
+    display: none;
+}
+
+.main-img-mobile {
+    display: none;
+}
+
+.main-holder h1 {
+    color: var(--primary-header-color);
+}
+
+span {
+    color: var(--secondary-header-color);
+}
+
+.main-holder p {
+    color: var(--par-color);
+}
+
+.main-holder-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 64px;
+    max-width: 536px;
+}
+
+.main-patern {
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    bottom: -35%;
+}
+
+.main-holder-input {
+    width: 427px; 
+    height: 46px; 
+    position: relative;
+    margin-top: 40px;
+}
+
+input[type="email"] {
+    border: none; 
+    outline: none; 
+    width: 427px;
+    height: 36px;
+    vertical-align: middle; 
+    background-color: var(--input-color-bgr);
+    color: var(--input-color);
+    border-radius: 20px;
+    padding-left: 30px;
+     
+}
+
+button {
+    width: 146px; 
+    height: 36px;
+    border: none; 
+    border-radius: 20px;
+    position: absolute;
+    right: 0%;
+    background-color: var(--primary-btn);
+}
+
+.error {
+    padding: 0;
+    font-size: 80%;
+    color: #900;
+    box-sizing: border-box;
+  }
+  
+  .error.active {
+    padding: 0.8em;
+  }
+
+@media only screen and (max-width: 768px) {
+    .main {
+        width: 100%;
+    }
+
+    .main-holder {
+        width: 635px;
+        height: 416px;
+        object-fit: cover;
+        top: 50px;
+        left: 80px;
+    }
+
+    .main-holder h1 {
+        font-size: 36px;
+    }
+
+    .main-holder p {
+       width: 445px;
+    }
+
+    .main-img-tablet {
+        top: -550px;
+        left: 300px;
+        display: flex;
+        position: relative;
+        width: 491px;
+        height: 600px;
+    }
+
+    .main-img-desktop {
+        display: none;
+    }
+
+    .main-img-mobile {
+        display: none;
+    }
+    .main-patern {
+        top: 50%;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .main {
+        width: 100%;
+        justify-content: center;
+        background-color: var(--primary-bgr);
+    }
+    
+    .main-img-mobile {
+        display: flex;
+        position: absolute;
+        display: none;
+    }
+
+    .main-img-desktop {
+        display: none;
+    }
+   
+    .main-img-tablet {
+        display: none;
+    }
+
+    .main-patern {
+        display: none;
+    }
+
+    .main-holder {
+        width: 100%;
+        margin-top: 30px;
+        align-items: center;
+       
+    }
+
+    .main-holder h1 {
+        text-align: center;
+    }
+
+    .main-holder p {
+        width: 327px;
+        text-align: center;
+    }
+
+    .main-holder-icons {
+        width: 315px;
+       display: none;
+    }
+    
+
+    .main-holder-input {
+        width: 100%;
+        align-items: center;
+        left:10%;
+    }
+
+    button {
+        position: relative;
+        margin-top: 10px;
+        width: 327px;
+    }
+
+    input[type="email"] {
+        width: 327px;
+    }
+}
